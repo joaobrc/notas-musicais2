@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "notas-musicais2"
+version = "0.1.0"
+description = ""
+authors = ["joaobrc <56743873+joaobrc@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "notas_musicais2"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
