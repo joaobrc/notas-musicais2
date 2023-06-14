@@ -1,0 +1,15 @@
+site_name: Notas Musicais
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/note.png
+  favicon: assets/note.png
+  palette:
+    primary: orange
+
+markdown_extensions:
+  - attr_list
+
+extra_css:
+  - stylesheets/extra.css
