@@ -22,14 +22,20 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
         >>> escala('b', 'maior')
         {'notas': ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
     """
-    tonica = tonica.upper()
-    intervalos = ESCALAS[tonalidade]
 
     try:
+        tonica = tonica.upper()
         tonica_pos = NOTAS.index(tonica)
+        intervalos = ESCALAS[tonalidade]
     except ValueError:
         raise ValueError('Nota invalida, tente uma destas {}'.format(NOTAS))
-
+    except KeyError:
+        raise KeyError(
+            'escala inexistente ou indisponivel, '
+            'tente uma destas {}'.format(list(ESCALAS.keys())),
+        )
+    except AttributeError:
+        raise AttributeError('Atributo invalido, só permitido texto')
     temp = []
     for intervalo in intervalos:
         nota = (tonica_pos + intervalo) % 12
