@@ -2,19 +2,21 @@ NOTAS = 'C C# D D# E F F# G G# A A# B'.split()
 ESCALAS = {'maior': (0, 2, 4, 5, 7, 9, 11)}
 
 
-def escala(tonica:str, tonalidade:str):
+def escala(tonica: str, tonalidade: str):
     """
     Gera uma escala apartir de uma tonica  e uma tonalidade
-    
+
+
     Parameters:
         tonica: Nota que sera a tonica da escala
         tonalidade: Tonalidade da escala
 
     >>> escala('C', 'maior')
     {'notas': ['C', 'D', 'E', 'F', 'G', 'A', 'B'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
-    
+
+
     >>> escala('B', 'maior')
-    {'notas': ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#'],'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
+    {'notas': ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
     """
 
     intervalos = ESCALAS[tonalidade]
