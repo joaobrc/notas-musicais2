@@ -2,7 +2,7 @@ NOTAS = 'C C# D D# E F F# G G# A A# B'.split()
 ESCALAS = {'maior': (0, 2, 4, 5, 7, 9, 11)}
 
 
-def escala(tonica: str, tonalidade: str):
+def escala(tonica:str, tonalidade:str):
     """
     Gera uma escala apartir de uma tonica  e uma tonalidade
 
@@ -12,13 +12,24 @@ def escala(tonica: str, tonalidade: str):
 
     >>> escala('C', 'maior')
     {'notas': ['C', 'D', 'E', 'F', 'G', 'A', 'B'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
-
+    
     >>> escala('B', 'maior')
     {'notas': ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#'],'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
     """
 
-    intervalos = ESCALAS[tonalidade]
-    tonica_pos = NOTAS.index(tonica)
+    try:
+        tonica = tonica.upper()
+        tonica_pos = NOTAS.index(tonica)
+        intervalos = ESCALAS[tonalidade]
+    except ValueError:
+        raise ValueError('Nota invalida, tente uma destas {}'.format(NOTAS))
+    except KeyError:
+        raise KeyError(
+            'escala inexistente ou indisponivel, '
+            'tente uma destas {}'.format(list(ESCALAS.keys())),
+        )
+    except AttributeError:
+        raise AttributeError('Atributo invalido, só permitido texto')
     temp = []
     for intervalo in intervalos:
         nota = (tonica_pos + intervalo) % 12
