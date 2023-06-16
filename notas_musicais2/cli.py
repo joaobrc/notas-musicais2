@@ -21,4 +21,5 @@ def escalas(
     tabela.add_row(*notas)
     console.print(tabela)
 
+
 run(escalas)
