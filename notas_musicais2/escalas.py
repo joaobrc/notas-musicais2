@@ -23,7 +23,7 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
         {'notas': ['C', 'D', 'E', 'F', 'G', 'A', 'B'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
 
         >>> escala('B', 'maior')
-        {'notas': ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#'],'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
+        {'notas': ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
     """
 
     try:
