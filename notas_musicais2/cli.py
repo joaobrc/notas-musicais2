@@ -1,12 +1,16 @@
 from rich.console import Console
 from rich.table import Table
-from typer import Argument, run
+from typer import Argument, Typer
 from typing_extensions import Annotated
-from escalas import escala
+
+from notas_musicais2.escalas import escala
 
 console = Console()
 
+app = Typer()
 
+
+@app.command()
 def escalas(
     tonica: Annotated[str, Argument(help='Tonica da escala')] = 'C',
     tonalidade: Annotated[
@@ -20,6 +24,3 @@ def escalas(
         tabela.add_column(grau)
     tabela.add_row(*notas)
     console.print(tabela)
-
-
-run(escalas)
