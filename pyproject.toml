@@ -11,6 +11,8 @@ python = "^3.11"
 rich = "^13.4.2"
 typer = "^0.9.0"
 
+[tool.poetry.scripts]
+escalas = "notas_musicais2.cli:app"
 
 [tool.poetry.group.dev.dependencies]
 blue = "^0.9.1"
