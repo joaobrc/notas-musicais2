@@ -32,7 +32,7 @@ def test_deve_retorna_erro_ao_inserir_valor_nao_presente_nas_notas():
 def test_deve_retorna_KeyErro_ao_inserir_uma_tonica_inexistente_e_apresenta_as_tonalidades_certas():
     # monta ou arruma
     tonica = 'C'
-    tonalidade = 'menor'
+    tonalidade = 'i'
     menssagem = (
         'escala inexistente ou indisponivel, '
         'tente uma destas {}'.format(list(ESCALAS.keys()))
