@@ -46,16 +46,19 @@ def test_deve_retorna_KeyErro_ao_inserir_uma_tonica_inexistente_e_apresenta_as_t
 
 
 @mark.parametrize(
-    'tonica, esperado',
+    'tonica, tonalidade, esperado',
     [
-        ('C', ['C', 'D', 'E', 'F', 'G', 'A', 'B']),
-        ('B', ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#']),
-        ('A', ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#']),
+        ('C', 'maior', ['C', 'D', 'E', 'F', 'G', 'A', 'B']),
+        ('B', 'maior', ['B', 'C#', 'D#', 'E', 'F#', 'G#', 'A#']),
+        ('A', 'maior', ['A', 'B', 'C#', 'D', 'E', 'F#', 'G#']),
+        ('C', 'menor', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
+        ('B', 'menor', ['B', 'C#', 'D', 'E', 'F#', 'G', 'A']),
+        ('A', 'menor', ['A', 'B', 'C', 'D', 'E', 'F', 'G']),
     ],
 )
-def test_deve_retornar_as_notas_esperados(tonica, esperado):
+def test_deve_retornar_as_notas_esperados(tonica, tonalidade, esperado):
 
-    escalas = escala(tonica, 'maior')
+    escalas = escala(tonica, tonalidade)
     assert esperado == escalas['notas']
 
 
